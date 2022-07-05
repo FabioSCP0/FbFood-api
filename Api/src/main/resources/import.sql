@@ -1,5 +1,20 @@
+insert into cidade (nome) values ('Niteroi')
+insert into cidade (nome) values ('Santos')
+
 insert into cozinha (id,nome) values (1,'Tailandesa')
 insert into cozinha (id,nome) values (2,'Indiana')
-insert into restaurante (nome,taxa_frete,cozinha_id) values ('Abc','5.10',1)
-insert into restaurante (nome,taxa_frete,cozinha_id) values ('Def','7.50',1)
-insert into restaurante (nome,taxa_frete,cozinha_id) values ('Ghi','7.50',2)
+
+insert into estado (nome) values ('Rio de Janeiro')
+insert into estado (nome) values ('São Paulo')
+
+insert into forma_pagamento (descricao) values ('Cartão De Credito')
+insert into forma_pagamento (descricao) values ('Cartão De Debito')
+insert into forma_pagamento (descricao) values ('Dinheiro')
+
+insert into permissao (nome,descricao) values ('Alteracao', 'Altera Usuario')
+insert into permissao (nome,descricao) values ('Inclusao', 'Inclui Usuario')
+
+
+insert into restaurante (nome,taxa_frete,cozinha_id) values ('Burguer King','5.10',1)
+insert into restaurante (nome,taxa_frete,cozinha_id) values ('Mc Donalds','7.50',1)
+insert into restaurante (nome,taxa_frete,cozinha_id) values ('Girafas','7.50',2)
