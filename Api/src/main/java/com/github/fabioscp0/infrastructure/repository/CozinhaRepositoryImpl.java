@@ -40,11 +40,7 @@ public class CozinhaRepositoryImpl implements CozinhaRepository{
 	@Transactional
 	public void remover(Long id) {
 		Cozinha cozinha = buscar(id);
-		
-		if(cozinha == null) {
-			throw new EmptyResultDataAccessException(1);
-		}
-		
+		if(cozinha == null) throw new EmptyResultDataAccessException(1);
 		manager.remove(cozinha);
 	}
 

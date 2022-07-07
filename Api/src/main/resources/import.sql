@@ -1,11 +1,11 @@
-insert into cidade (nome) values ('Niteroi')
-insert into cidade (nome) values ('Santos')
-
 insert into cozinha (id,nome) values (1,'Tailandesa')
 insert into cozinha (id,nome) values (2,'Indiana')
 
 insert into estado (nome) values ('Rio de Janeiro')
 insert into estado (nome) values ('São Paulo')
+
+insert into cidade (nome,estado_id) values ('Niteroi', 1)
+insert into cidade (nome,estado_id) values ('Santos', 2)
 
 insert into forma_pagamento (descricao) values ('Cartão De Credito')
 insert into forma_pagamento (descricao) values ('Cartão De Debito')
