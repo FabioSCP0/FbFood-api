@@ -21,9 +21,7 @@ public class CadastroCidadeService {
 	public void excluir(Long id) {
 		try {
 			cidadeRepository.remover(id);
-		} catch (EntidadeEmUsoException e) {
-			throw new EntidadeEmUsoException(String.format("Cidade de código %d não pode ser encontrada", id));
-		} catch(EntidadeNaoEncontradaException e) {
+		} catch (IllegalArgumentException e) {
 			throw new EntidadeNaoEncontradaException(String.format("Cidade de código %d não pode ser encontrada", id));
 		}
 	}

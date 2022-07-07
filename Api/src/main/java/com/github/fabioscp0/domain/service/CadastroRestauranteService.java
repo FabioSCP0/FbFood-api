@@ -28,4 +28,12 @@ public class CadastroRestauranteService {
 		restaurante.setCozinha(cozinha);
 		return restauranteRepository.salvar(restaurante);
 	}
+	
+	public void excluir(Long id) {
+		try {
+			restauranteRepository.remover(id);
+		} catch (IllegalArgumentException e) {
+			throw new EntidadeNaoEncontradaException(String.format("Restaurante de código %d não pode ser encontrada", id));
+		}
+	}
 }

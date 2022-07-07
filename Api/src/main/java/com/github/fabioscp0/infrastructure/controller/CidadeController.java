@@ -70,8 +70,6 @@ public class CidadeController {
 			return ResponseEntity.noContent().build();
 		} catch (EntidadeNaoEncontradaException e) {
 			return ResponseEntity.notFound().build();
-		} catch (EntidadeEmUsoException e) {
-			return ResponseEntity.badRequest().body(e.getMessage());
 		}
 	}
 }
