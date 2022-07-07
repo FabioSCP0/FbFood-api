@@ -26,8 +26,7 @@ public class CidadeRepositoryImpl implements CidadeRepository{
 
 	@Override
 	public Cidade buscar(Long id) {
-		manager.find(Cidade.class, id);
-		return null;
+		return manager.find(Cidade.class, id);
 	}
 
 	@Override
