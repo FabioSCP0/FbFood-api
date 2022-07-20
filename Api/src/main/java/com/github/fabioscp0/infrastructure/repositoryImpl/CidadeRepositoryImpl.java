@@ -1,4 +1,4 @@
-package com.github.fabioscp0.infrastructure.repository;
+package com.github.fabioscp0.infrastructure.repositoryImpl;
 
 import java.util.List;
 
