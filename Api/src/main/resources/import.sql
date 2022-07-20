@@ -12,8 +12,6 @@ insert into forma_pagamento (descricao) values ('Cartão De Debito')
 insert into forma_pagamento (descricao) values ('Dinheiro')
 
 insert into permissao (nome,descricao) values ('Alteracao', 'Altera Usuario')
-insert into permissao (nome,descricao) values ('Inclusao', 'Inclui Usuario')
-
 
 insert into restaurante (nome,taxa_frete,cozinha_id) values ('Burguer King','5.10',1)
 insert into restaurante (nome,taxa_frete,cozinha_id) values ('Mc Donalds','7.50',1)

@@ -82,18 +82,20 @@ public class RestauranteController {
 	}
 	
 	private void merge(Map<String, Object> dadosOrigem, Restaurante restauranteDestino) {
+		
 		ObjectMapper objectMapper = new ObjectMapper();
 		Restaurante restauranteOrigem = objectMapper.convertValue(dadosOrigem, Restaurante.class);
 		
 		dadosOrigem.forEach((nomePropriedade, valorPropriedade)->{
-			Field field = ReflectionUtils.findRequiredField(Restaurante.class, nomePropriedade);
-			field.setAccessible(true);
+		Field field = ReflectionUtils.findRequiredField(Restaurante.class, nomePropriedade);
+		field.setAccessible(true);
 			
-			Object novoValor = org.springframework.util.ReflectionUtils.getField(field, restauranteOrigem);
+		Object novoValor = org.springframework.util.ReflectionUtils.getField(field, restauranteOrigem);
 			
-			System.out.println(nomePropriedade + "=" + valorPropriedade + "="+novoValor);
+		System.out.println(nomePropriedade + "=" + valorPropriedade + "="+novoValor);
 			
-			org.springframework.util.ReflectionUtils.setField(field, restauranteDestino, novoValor);
+		org.springframework.util.ReflectionUtils.setField(field, restauranteDestino, novoValor);
+		
 		});
 	}
 	
