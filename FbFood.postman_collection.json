@@ -221,6 +221,35 @@
 					"response": []
 				},
 				{
+					"name": "Restaurantes - Atualizar Parcialmente",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nome\": \"A Mineira\",\r\n        \"taxaFrete\": 12,\r\n        \"cozinha\": {\r\n            \"id\": 1\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/restaurantes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurantes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Restaurantes - Adicionar",
 					"request": {
 						"method": "POST",
@@ -753,7 +782,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/permissoes/3",
+							"raw": "http://localhost:8080/permissoes/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -761,7 +790,7 @@
 							"port": "8080",
 							"path": [
 								"permissoes",
-								"3"
+								"2"
 							]
 						}
 					},
@@ -782,7 +811,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/permissoes/2",
+							"raw": "http://localhost:8080/permissoes/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -790,7 +819,7 @@
 							"port": "8080",
 							"path": [
 								"permissoes",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -811,7 +840,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/permissoes/3",
+							"raw": "http://localhost:8080/permissoes/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -819,7 +848,7 @@
 							"port": "8080",
 							"path": [
 								"permissoes",
-								"3"
+								"1"
 							]
 						}
 					},
