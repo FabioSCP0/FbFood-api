@@ -28,12 +28,12 @@ public class CadastroRestauranteService {
 		if(cozinha.isEmpty()) throw new EntidadeNaoEncontradaException(String.format("Não existe cadastro de cozinha com código %d", cozinhaId));
 		
 		restaurante.setCozinha(cozinha.get());
-		return restauranteRepository.salvar(restaurante);
+		return restauranteRepository.save(restaurante);
 	}
 	
 	public void excluir(Long id) {
 		try {
-			restauranteRepository.remover(id);
+			restauranteRepository.deleteById(id);
 		} catch (IllegalArgumentException e) {
 			throw new EntidadeNaoEncontradaException(String.format("Restaurante de código %d não pode ser encontrada", id));
 		}
