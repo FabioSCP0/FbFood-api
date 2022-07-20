@@ -47,7 +47,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/cozinhas/1",
+							"raw": "http://localhost:8080/cozinhas/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -55,7 +55,7 @@
 							"port": "8080",
 							"path": [
 								"cozinhas",
-								"1"
+								"5"
 							]
 						}
 					},
@@ -76,7 +76,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/cozinhas/1",
+							"raw": "http://localhost:8080/cozinhas/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -84,7 +84,7 @@
 							"port": "8080",
 							"path": [
 								"cozinhas",
-								"1"
+								"4"
 							]
 						}
 					},
@@ -321,7 +321,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/estados/1",
+							"raw": "http://localhost:8080/estados/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -329,7 +329,7 @@
 							"port": "8080",
 							"path": [
 								"estados",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -465,7 +465,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/cidades/1",
+							"raw": "http://localhost:8080/cidades/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -473,7 +473,7 @@
 							"port": "8080",
 							"path": [
 								"cidades",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -494,7 +494,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/cidades/1",
+							"raw": "http://localhost:8080/cidades/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -502,7 +502,7 @@
 							"port": "8080",
 							"path": [
 								"cidades",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -560,6 +560,294 @@
 							"port": "8080",
 							"path": [
 								"cidades"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FormaPagamentos",
+			"item": [
+				{
+					"name": "FormaPagamentos- Listar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/formapagamentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formapagamentos"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FormaPagamentos- Buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/formapagamentos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formapagamentos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FormaPagamentos- Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Nano\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/formapagamentos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formapagamentos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FormaPagamentos - Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/formapagamentos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formapagamentos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FormaPagamentos- Adicionar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Bitcoin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/formapagamentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formapagamentos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permissoes",
+			"item": [
+				{
+					"name": "Permissoes - Listar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/permissoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permissoes"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permissoes - Buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/permissoes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permissoes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permissoes - Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Deletar\",\r\n    \"descricao\": \"Deleta Usuario\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/permissoes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permissoes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permissoes - Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/permissoes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permissoes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permissoes- Adicionar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Inclusao\",\r\n    \"descricao\": \"Inclui Usuario\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/permissoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permissoes"
 							]
 						}
 					},
