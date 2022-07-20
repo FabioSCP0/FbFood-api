@@ -1,6 +1,7 @@
 package com.github.fabioscp0.infrastructure.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,13 +35,13 @@ public class EstadoController {
 	
 	@GetMapping
 	public List<Estado> listar(){
-		return estadoRepository.listar();
+		return estadoRepository.findAll();
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Estado> buscar(@PathVariable Long id){
-		Estado estado = estadoRepository.buscar(id);
-		if(estado != null) return ResponseEntity.ok(estado);
+		Optional<Estado> estado = estadoRepository.findById(id);
+		if(estado.isPresent()) return ResponseEntity.ok(estado.get());
 		return ResponseEntity.notFound().build();
 	}
 	
@@ -52,11 +53,11 @@ public class EstadoController {
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<Estado> atualizar(@PathVariable Long id, @RequestBody Estado estado){
-		Estado estadoAtual = estadoRepository.buscar(id);
-		if(estadoAtual != null) {
-			BeanUtils.copyProperties(estado, estadoAtual, "id");
-			estadoRepository.salvar(estadoAtual);
-			return ResponseEntity.ok().build();
+		Optional<Estado> estadoAtual = estadoRepository.findById(id);
+		if(estadoAtual.isPresent()) {
+			BeanUtils.copyProperties(estado, estadoAtual.get(), "id");
+			Estado estadoSalvar = estadoRepository.save(estadoAtual.get());
+			return ResponseEntity.ok(estadoSalvar);
 		}
 		return ResponseEntity.notFound().build();
 	}
