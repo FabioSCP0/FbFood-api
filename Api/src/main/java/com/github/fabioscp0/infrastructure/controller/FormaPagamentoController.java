@@ -27,10 +27,10 @@ import com.github.fabioscp0.domain.service.CadastroFormaPagamentoService;
 public class FormaPagamentoController {
 
 	@Autowired
-	FormaPagamentoRepository formaPagamentoRepository;
+	private FormaPagamentoRepository formaPagamentoRepository;
 
 	@Autowired
-	CadastroFormaPagamentoService cadastroFormaPagamentoService;
+	private CadastroFormaPagamentoService cadastroFormaPagamentoService;
 	
 	@GetMapping
 	public List<FormaPagamento> listar(){

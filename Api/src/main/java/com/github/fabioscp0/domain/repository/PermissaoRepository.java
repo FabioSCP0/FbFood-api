@@ -1,12 +1,9 @@
 package com.github.fabioscp0.domain.repository;
 
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.github.fabioscp0.domain.model.Permissao;
 
-public interface PermissaoRepository {
-	List<Permissao> listar();
-	Permissao buscar(Long id);
-	Permissao salvar(Permissao permissao);
-	void remover(Permissao permissao);
+public interface PermissaoRepository extends JpaRepository<Permissao, Long>{
+
 }
