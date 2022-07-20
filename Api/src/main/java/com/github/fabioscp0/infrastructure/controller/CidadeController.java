@@ -1,8 +1,7 @@
 package com.github.fabioscp0.infrastructure.controller;
 
 import java.util.List;
-
-import javax.persistence.PostRemove;
+import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.fabioscp0.domain.exception.EntidadeEmUsoException;
 import com.github.fabioscp0.domain.exception.EntidadeNaoEncontradaException;
 import com.github.fabioscp0.domain.model.Cidade;
 import com.github.fabioscp0.domain.repository.CidadeRepository;
@@ -36,13 +34,13 @@ public class CidadeController {
 	
 	@GetMapping
 	public List<Cidade> listar(){
-		return cidadeRepository.listar();
+		return cidadeRepository.findAll();
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Cidade> buscar(@PathVariable Long id){
-		Cidade cidade = cidadeRepository.buscar(id);
-		if(cidade != null) return ResponseEntity.ok(cidade);
+		Optional<Cidade> cidade = cidadeRepository.findById(id);
+		if(cidade.isPresent()) return ResponseEntity.ok(cidade.get());
 		return ResponseEntity.notFound().build();
 	}
 	
@@ -54,11 +52,11 @@ public class CidadeController {
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<Cidade> atualizar(@PathVariable Long id, @RequestBody Cidade cidade){
-		Cidade cidadeAtual = cidadeRepository.buscar(id);
-		if(cidadeAtual != null) {
-			BeanUtils.copyProperties(cidade, cidadeAtual, "id");
-			cadastroCidadeService.salvar(cidadeAtual);
-			return ResponseEntity.ok(cidadeAtual);
+		Optional<Cidade> cidadeAtual = cidadeRepository.findById(id);
+		if(cidadeAtual.isPresent()) {
+			BeanUtils.copyProperties(cidade, cidadeAtual.get(), "id");
+			Cidade cidadeSalva = cadastroCidadeService.salvar(cidadeAtual.get());
+			return ResponseEntity.ok(cidadeSalva);
 		}
 		return ResponseEntity.notFound().build();
 	}
