@@ -36,7 +36,7 @@ public class RestauranteRepositoryImpl implements RestauranteRepositoryQueries {
 		
 		if(StringUtils.hasLength(nome)) predicates.add(builder.like(root.get("nome"), "%" + nome + "%"));
 		if(taxaFreteInicial != null)	predicates.add(builder.greaterThanOrEqualTo(root.get("taxaFrete"), taxaFreteInicial));
-		if(taxaFreteFinal != null)	predicates.add(builder.lessThanOrEqualTo(root.get("taxaFrete"), taxaFreteFinal));
+		if(taxaFreteFinal != null)		predicates.add(builder.lessThanOrEqualTo(root.get("taxaFrete"), taxaFreteFinal));
 		
 		criteria.where(predicates.toArray(new Predicate[0]));
 		

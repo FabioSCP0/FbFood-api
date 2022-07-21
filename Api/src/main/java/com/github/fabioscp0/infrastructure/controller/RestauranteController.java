@@ -26,6 +26,7 @@ import com.github.fabioscp0.domain.exception.EntidadeNaoEncontradaException;
 import com.github.fabioscp0.domain.model.Restaurante;
 import com.github.fabioscp0.domain.repository.RestauranteRepository;
 import com.github.fabioscp0.domain.service.CadastroRestauranteService;
+import com.github.fabioscp0.infrastructure.repository.spec.RestauranteSpecs;
 
 @RestController
 @RequestMapping("/restaurantes")
@@ -133,6 +134,12 @@ public class RestauranteController {
 	@GetMapping("/count-por-cozinha")
 	public int restaurantesCountPorCozinha(Long cozinhaId) {
 		return restauranteRepository.countByCozinhaId(cozinhaId);
+	}
+	
+	@GetMapping("/com-frete-gratis")
+	public List<Restaurante> restaurantesComFreteGratis(String nome){
+		
+		return restauranteRepository.findAll(RestauranteSpecs.comFreteGratis().and(RestauranteSpecs.comNomeSemelhante(nome)));
 	}
 	
 }
