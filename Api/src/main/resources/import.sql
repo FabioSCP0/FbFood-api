@@ -17,3 +17,5 @@ insert into restaurante (nome,taxa_frete,cozinha_id) values ('Burguer King','5.1
 insert into restaurante (nome,taxa_frete,cozinha_id) values ('Mc Donalds','7.50',1)
 insert into restaurante (nome,taxa_frete,cozinha_id) values ('Girafas','7.50',2)
 insert into restaurante (nome,taxa_frete,cozinha_id) values ('Subway','0.0',2)
+
+insert into restaurante_forma_pagamento (restaurante_id, forma_pagamento_id) values (1,1), (1,2), (1,3), (2,3), (3,2), (3,3)
