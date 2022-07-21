@@ -1,6 +1,7 @@
 package com.github.fabioscp0.domain.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -43,6 +47,14 @@ public class Restaurante {
 	@JsonIgnore
 	@Embedded
 	private Endereco endereco;
+	
+	@CreationTimestamp
+	@Column(nullable = false)
+	private LocalDateTime dataCadastro;
+	
+	@UpdateTimestamp
+	@Column(nullable = false)
+	private LocalDateTime dataAtualizacao;
 	
 	@JsonIgnore
 	@ManyToMany
