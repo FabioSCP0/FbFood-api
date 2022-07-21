@@ -1,6 +1,7 @@
 package com.github.fabioscp0.infrastructure.controller;
 
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -111,4 +112,27 @@ public class RestauranteController {
 			return ResponseEntity.notFound().build();
 		}
 	}
+	
+	
+	/*------------------------- Teste JPA ----------------------*/
+	@GetMapping("/por-nome")
+	public List<Restaurante> consultarPorNomeECozinha(String nome, Long cozinhaId){
+		return restauranteRepository.consultarPorNome(nome, cozinhaId);
+	}
+	
+	@GetMapping("/por-taxa-frete")
+	public List<Restaurante> restaurantePorTaxaFrete(BigDecimal taxaInicial, BigDecimal taxaFinal){
+		return restauranteRepository.queryByTaxaFreteBetween(taxaInicial, taxaFinal);
+	}
+
+	@GetMapping("/por-nome-e-frete")
+	public List<Restaurante> restaurantePorNomeFrete(String nome,BigDecimal taxaInicial, BigDecimal taxaFinal){
+		return restauranteRepository.find(nome,taxaInicial, taxaFinal);
+	}
+	
+	@GetMapping("/count-por-cozinha")
+	public int restaurantesCountPorCozinha(Long cozinhaId) {
+		return restauranteRepository.countByCozinhaId(cozinhaId);
+	}
+	
 }
