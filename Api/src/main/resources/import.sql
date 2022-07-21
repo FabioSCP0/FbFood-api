@@ -13,7 +13,7 @@ insert into forma_pagamento (descricao) values ('Dinheiro')
 
 insert into permissao (nome,descricao) values ('Alteracao', 'Altera Usuario')
 
-insert into restaurante (nome,taxa_frete,cozinha_id) values ('Burguer King','5.10',1)
+insert into restaurante (id, nome, taxa_frete, cozinha_id, data_cadastro, data_atualizacao, endereco_cidade_id, endereco_cep, endereco_logradouro, endereco_numero, endereco_bairro) values (1, 'Burguer King', 10, 1, utc_timestamp, utc_timestamp, 1, '38400-999', 'Rua João Pinheiro', '1000', 'Centro');
 insert into restaurante (nome,taxa_frete,cozinha_id) values ('Mc Donalds','7.50',1)
 insert into restaurante (nome,taxa_frete,cozinha_id) values ('Girafas','7.50',2)
 insert into restaurante (nome,taxa_frete,cozinha_id) values ('Subway','0.0',2)
