@@ -62,6 +62,26 @@
 					"response": []
 				},
 				{
+					"name": "Cozinhas - Buscar Por Nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cozinhas/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cozinhas",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Cozinhas - Atualizar",
 					"request": {
 						"method": "PUT",
@@ -153,6 +173,131 @@
 			"name": "Restaurantes",
 			"item": [
 				{
+					"name": "Teste Consultas JPA",
+					"item": [
+						{
+							"name": "Consulta - Nome e Cozinha",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/restaurantes/por-nome?nome=a&cozinhaId=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"restaurantes",
+										"por-nome"
+									],
+									"query": [
+										{
+											"key": "nome",
+											"value": "a"
+										},
+										{
+											"key": "cozinhaId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consulta - Taxa Frete",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/restaurantes/por-taxa-frete?taxaInicial=2&taxaFinal=7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"restaurantes",
+										"por-taxa-frete"
+									],
+									"query": [
+										{
+											"key": "taxaInicial",
+											"value": "2"
+										},
+										{
+											"key": "taxaFinal",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consulta - Nome e Taxa Frete",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/restaurantes/por-taxa-frete?nome=King&taxaInicial=2&taxaFinal=7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"restaurantes",
+										"por-taxa-frete"
+									],
+									"query": [
+										{
+											"key": "nome",
+											"value": "King"
+										},
+										{
+											"key": "taxaInicial",
+											"value": "2"
+										},
+										{
+											"key": "taxaFinal",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Contador - Cozinhas em Utilização",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/restaurantes/count-por-cozinha?cozinhaId=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"restaurantes",
+										"count-por-cozinha"
+									],
+									"query": [
+										{
+											"key": "cozinhaId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Restaurantes - Listar",
 					"request": {
 						"method": "GET",
@@ -227,7 +372,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "    {\r\n        \"nome\": \"A Mineira\",\r\n        \"taxaFrete\": 12,\r\n        \"cozinha\": {\r\n            \"id\": 1\r\n        }\r\n    }",
+							"raw": "    {\r\n        \"taxaFrete\": 12\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -256,7 +401,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Comida Americana\",\r\n    \"taxaFrete\": 12,\r\n        \"cozinha\": {\r\n            \"id\": 1\r\n        }\r\n}",
+							"raw": "{\r\n    \"nome\": \"Comida Americana\",\r\n    \"taxaFrete\": 12,\r\n        \"cozinha\": {\r\n            \"id\": 10\r\n        }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
