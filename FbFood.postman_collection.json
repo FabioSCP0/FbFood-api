@@ -236,12 +236,12 @@
 							"response": []
 						},
 						{
-							"name": "Consulta - Nome e Taxa Frete",
+							"name": "Consulta - Com Frete Gratis",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8080/restaurantes/por-taxa-frete?nome=King&taxaInicial=2&taxaFinal=7",
+									"raw": "http://localhost:8080/restaurantes/com-frete-gratis\"?nome=b",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -249,20 +249,52 @@
 									"port": "8080",
 									"path": [
 										"restaurantes",
-										"por-taxa-frete"
+										"com-frete-gratis\""
+									],
+									"query": [
+										{
+											"key": "taxaFinal",
+											"value": "7",
+											"disabled": true
+										},
+										{
+											"key": "nome",
+											"value": "b"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consulta - Nome e Taxa Frete",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/restaurantes/por-nome-e-frete?nome=b&taxaFinal=12 ",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"restaurantes",
+										"por-nome-e-frete"
 									],
 									"query": [
 										{
 											"key": "nome",
-											"value": "King"
+											"value": "b"
 										},
 										{
 											"key": "taxaInicial",
-											"value": "2"
+											"value": "5",
+											"disabled": true
 										},
 										{
 											"key": "taxaFinal",
-											"value": "7"
+											"value": "12 "
 										}
 									]
 								}
@@ -290,6 +322,26 @@
 											"key": "cozinhaId",
 											"value": "1"
 										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Contador - Primeiro Restaurante",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/restaurantes/primeiro",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"restaurantes",
+										"primeiro"
 									]
 								}
 							},
@@ -401,7 +453,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Comida Americana\",\r\n    \"taxaFrete\": 12,\r\n        \"cozinha\": {\r\n            \"id\": 10\r\n        }\r\n}",
+							"raw": "{\r\n    \"nome\": \"Comida Americana\",\r\n    \"taxaFrete\": 0,\r\n        \"cozinha\": {\r\n            \"id\": 1\r\n        }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
